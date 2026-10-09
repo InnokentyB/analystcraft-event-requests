@@ -49,6 +49,6 @@ TDPD / Test-Driven Product Development — оригинальный метод I
 ## Публикация
 Dockerfile и точный manifest v1 проверены. Репозиторий опубликован: https://github.com/InnokentyB/analystcraft-event-requests. GitHub Actions проверяет контейнер и публикует GHCR по immutable digest. Первая проверенная image revision: `ddce68cad3868c625579965cd0b99f4c84b7b7d4`, digest `sha256:b6dde0818cdd66f6b3d059ad44ed6c27fffbe82e562b73b7d9f41122a08c4c9e`. Собственный образ доступен публично без авторизации; локальный и CI container e2e проходят 16/16.
 
-MCP подключён через официальный STDIO bridge. Текущий активный аккаунт занят демо p0. Новый аккаунт и размещение этого приложения ожидают разрешения владельца на использование одного приглашения. Регистрация и deployment не выполнялись, текущий demo не заменялся. UAT владельца ожидается.
+Приложение опубликовано через MCP на **https://p1.вайбхостинг.рф**. По отдельному разрешению владельца использовано одно приглашение и создан новый аккаунт «AnalystCraft event requests». Демо p0 не заменялось. Operation `op_ed8ee66444ca0568`: `ready_for_owner_review`, HTTPS health healthy, точный release digest подтверждён. На публичном URL прошли 16/16 e2e (desktop/mobile). UAT владельца ожидается; `record_uat` не вызывался.
 
 Инструкция: docs/DEPLOYMENT.md. Docker smoke уже выполнен после запуска Docker Desktop. Для воспроизводимого релиза используйте commit образа, а не поздние изменения документации. Опубликованные digest/метаданные не являются гарантией всей безопасности приложения.

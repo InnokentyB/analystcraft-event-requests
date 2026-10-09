@@ -1,5 +1,5 @@
 # Самостоятельная публикация
-Репозиторий и собственный GHCR-образ опубликованы 09.10.2026 по поручению владельца. Приложение на ВайбХостинге ещё не зарегистрировано и не развёрнуто; приглашения не использовались.
+Репозиторий и собственный GHCR-образ опубликованы 09.10.2026 по поручению владельца. Приложение зарегистрировано в новом отдельном аккаунте и развёрнуто на https://p1.вайбхостинг.рф. Использовано ровно одно приглашение по явному разрешению владельца.
 Контракт проверен 09.10.2026 по `LLMDevopsMVP/src/application-manifest.ts`, `src/deployment-service.ts`, `src/mcp-server.ts` и `LLMDevops/VIBEHOSTING_DEMO_QUICKSTART_2026-10-08.md`.
 
 ## Контракт
@@ -43,4 +43,8 @@ node scripts/prepare-release.mjs https://github.com/OWNER/REPOSITORY ghcr.io/own
 ## Честный остаток
 Docker Desktop запущен; container build/run, /health и 16/16 e2e локально и в CI успешны. GitHub: https://github.com/InnokentyB/analystcraft-event-requests. Проверенная revision: ddce68cad3868c625579965cd0b99f4c84b7b7d4. Публичный GHCR image: ghcr.io/innokentyb/analystcraft-event-requests@sha256:b6dde0818cdd66f6b3d059ad44ed6c27fffbe82e562b73b7d9f41122a08c4c9e. Анонимный manifest inspect успешен; OCI revision совпадает с CI commit. CI: https://github.com/InnokentyB/analystcraft-event-requests/actions/runs/37926412953.
 
-Остаются разрешение на одно приглашение, отдельный аккаунт/слот, регистрация, plan/deploy через MCP, публичный HTTPS smoke и owner UAT. Текущий аккаунт занят демо p0. Публикация образа не равна размещению приложения.
+Отдельный аккаунт создан через `create_account`: AnalystCraft event requests. `register_project` → `plan_deployment` → `deploy_project` → `deployment_status` выполнены через официальный MCP bridge. Plan `plan_f6bc1b8e6c3e23d3`, operation `op_ed8ee66444ca0568`, приложение https://p1.вайбхостинг.рф. Сервер подтвердил нужный release digest и `ready_for_owner_review`; /health 200 через HTTPS и 16/16 public e2e успешны. UAT владельца ожидается.
+
+Доступ нового аккаунта сохраняется приватно локальным bridge; credential не входит в репозиторий/образ/отчёты, не выводился. Старый аккаунт/демо p0 не менялись. Пилот выдаёт доступ на семь дней; истечение доступа не останавливает приложение (см. контракт платформы).
+
+Это первый релиз нового аккаунта: предыдущего образа для rollback нет. Для повторяемого восстановления используйте сохранённый собственный digest; для последующих обновлений MCP фиксирует предыдущий образ и поддерживает `rollback_project`. Откат образа не восстанавливает localStorage. Нет серверной БД/миграций/томов. Не применять rollback к старому демо или чужой operation.

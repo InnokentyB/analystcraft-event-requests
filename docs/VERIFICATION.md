@@ -31,3 +31,6 @@
 
 ## Дополнение: подготовка релиза 09.10.2026
 Docker Desktop запущен. Реальный linux/amd64 контейнер ограничен 256 МБ / 0.5 CPU: Docker healthy, /health 200, наблюдаемая память около 57 МБ. 16/16 e2e проходят локально на контейнере. CI run 37926412953 завершён success, включая container e2e 16/16. Собственный GHCR образ опубликован публично; анонимный manifest inspect подтверждён; digest b6dde0818cdd66f6b3d059ad44ed6c27fffbe82e562b73b7d9f41122a08c4c9e; OCI revision ddce68cad3868c625579965cd0b99f4c84b7b7d4 совпадает с CI. Размещение приложения и owner UAT ещё не состоялись.
+
+## Публичный MCP-релиз 09.10.2026
+По явному разрешению владельца использовано одно приглашение для нового аккаунта. Регистрация, план, deploy, status выполнены через MCP; operation op_ed8ee66444ca0568, ready_for_owner_review. Публичный URL https://p1.вайбхостинг.рф. Доказательство платформы: точный release digest, container deployed, publicHealth healthy. Независимый HTTPS smoke: /health 200 с {"status":"ok"}, корневой документ AnalystCraft 200, TLS проверен. `E2E_BASE_URL=https://p1.xn--80acbgye4ag1ak4a.xn--p1ai npm run test:e2e`: 16/16 passed (9.9s), включая full lifecycle, возврат, reload и axe на desktop/mobile. Owner UAT ожидается, record_uat не вызывался.
