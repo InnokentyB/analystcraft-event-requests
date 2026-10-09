@@ -1,5 +1,5 @@
 # Самостоятельная публикация
-Ничего не опубликовано и не зарегистрировано. Приглашения не использовались.
+Репозиторий и собственный GHCR-образ опубликованы 09.10.2026 по поручению владельца. Приложение на ВайбХостинге ещё не зарегистрировано и не развёрнуто; приглашения не использовались.
 Контракт проверен 09.10.2026 по `LLMDevopsMVP/src/application-manifest.ts`, `src/deployment-service.ts`, `src/mcp-server.ts` и `LLMDevops/VIBEHOSTING_DEMO_QUICKSTART_2026-10-08.md`.
 
 ## Контракт
@@ -41,4 +41,6 @@ node scripts/prepare-release.mjs https://github.com/OWNER/REPOSITORY ghcr.io/own
 Отдельный новый сервис из этого Dockerfile/репозитория или собственного образа, порт 8080, health path /health, без томов и секретов. Настроить target port 8080 в домене; сервер также поддерживает PORT (по умолчанию 8080). Проверить тот же e2e на публичном URL. Внешних действий в этой работе не выполнялось.
 
 ## Честный остаток
-Docker daemon недоступен: build/run контейнера не проверены. GitHub remote, собственный GHCR digest, публичность образа, свободный разрешённый аккаунт/слот и публичный HTTPS smoke отсутствуют. Production build и сам HTTP-сервер проверяются локально отдельно; это не доказательство контейнерного релиза.
+Docker Desktop запущен; container build/run, /health и 16/16 e2e локально и в CI успешны. GitHub: https://github.com/InnokentyB/analystcraft-event-requests. Проверенная revision: ddce68cad3868c625579965cd0b99f4c84b7b7d4. Публичный GHCR image: ghcr.io/innokentyb/analystcraft-event-requests@sha256:b6dde0818cdd66f6b3d059ad44ed6c27fffbe82e562b73b7d9f41122a08c4c9e. Анонимный manifest inspect успешен; OCI revision совпадает с CI commit. CI: https://github.com/InnokentyB/analystcraft-event-requests/actions/runs/37926412953.
+
+Остаются разрешение на одно приглашение, отдельный аккаунт/слот, регистрация, plan/deploy через MCP, публичный HTTPS smoke и owner UAT. Текущий аккаунт занят демо p0. Публикация образа не равна размещению приложения.
